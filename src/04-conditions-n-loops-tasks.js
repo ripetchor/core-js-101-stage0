@@ -7,29 +7,6 @@
  ************************************************************************************************ */
 
 // ********************************************************************************************
-// Type definitions for isInsideCircle and doRectanglesOverlap functions
-
-/**
- * @typedef {Object} Point
- * @property {number} x
- * @property {number} y
- */
-
-/**
- * @typedef {Object} Circle
- * @property {Point} center
- * @property {number} radius
- */
-
-/**
- * @typedef {Object} Rectangle
- * @property {number} top
- * @property {number} left
- * @property {number} width
- * @property {number} height
- */
-
-// ********************************************************************************************
 
 /**
  * Returns the 'Fizz','Buzz' or an original number using the following rules:
@@ -125,6 +102,13 @@ function isTriangle(/* a, b, c */) {
  * NOTE: Please use canvas coordinate space (https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#The_grid),
  * it differs from Cartesian coordinate system.
  *
+ * @typedef {{
+ * top: number,
+ * left: number,
+ * width: number,
+ * height: number
+ * }} Rectangle
+ *
  * @param {Rectangle} rect1
  * @param {Rectangle} rect2
  * @return {boolean}
@@ -157,6 +141,16 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
  *     x: 5,
  *     y: 5
  *  }
+ *
+ * @typedef {{
+ * x: number,
+ * y: number
+ * }} Point
+ *
+ * @typedef {{
+ * center: Point,
+ * radius: number
+ * }} Circle
  *
  * @param {Circle} circle
  * @param {Point} point

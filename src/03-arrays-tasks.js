@@ -7,17 +7,6 @@
  *                                                                                            *
  ******************************************************************************************** */
 
-// ********************************************************************************************
-// Type definition for sortCitiesArray and group functions
-
-/**
- * @typedef {Object} GeoEntity
- * @property {string} country
- * @property {string} city
- */
-
-// ********************************************************************************************
-
 /**
  * Returns an index of the specified element in array or -1 if element is not found
  *
@@ -397,6 +386,11 @@ function toStringList(/* arr */) {
  * Sorts the specified array by country name first and city name
  * (if countries are equal) in ascending order.
  *
+ * @typedef {{
+ * country: string,
+ * city: string
+ * }} GeoEntity
+ *
  * @param {Array<GeoEntity>} arr
  * @return {Array<GeoEntity>}
  *
@@ -482,6 +476,11 @@ function distinct(/* arr */) {
  * Returns multimap of keys extracted from array elements via keySelector callback
  * and values extracted via valueSelector callback.
  * See: https://en.wikipedia.org/wiki/Multimap
+ *
+ * @typedef {{
+ * country: string,
+ * city: string
+ * }} GeoEntity
  *
  * @param {Array<GeoEntity>} array
  * @param {(item: GeoEntity) => string} keySelector
