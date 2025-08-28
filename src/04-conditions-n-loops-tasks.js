@@ -6,6 +6,31 @@
  *                                                                                                *
  ************************************************************************************************ */
 
+// ********************************************************************************************
+// Type definitions for isInsideCircle and doRectanglesOverlap functions
+
+/**
+ * @typedef {Object} Point
+ * @property {number} x
+ * @property {number} y
+ */
+
+/**
+ * @typedef {Object} Circle
+ * @property {Point} center
+ * @property {number} radius
+ */
+
+/**
+ * @typedef {Object} Rectangle
+ * @property {number} top
+ * @property {number} left
+ * @property {number} width
+ * @property {number} height
+ */
+
+// ********************************************************************************************
+
 /**
  * Returns the 'Fizz','Buzz' or an original number using the following rules:
  * 1) return original number
@@ -14,7 +39,7 @@
  * 4) for numbers which are multiples of both three and five return 'FizzBuzz'
  *
  * @param {number} num
- * @return {any}
+ * @return {string}
  *
  * @example
  *   2 =>  2
@@ -68,7 +93,7 @@ function getSumBetweenNumbers(/* n1, n2 */) {
  * @param {number} a
  * @param {number} b
  * @param {number} c
- * @return {bool}
+ * @return {boolean}
  *
  * @example:
  *   1,2,3    =>  false
@@ -100,9 +125,9 @@ function isTriangle(/* a, b, c */) {
  * NOTE: Please use canvas coordinate space (https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#The_grid),
  * it differs from Cartesian coordinate system.
  *
- * @param {object} rect1
- * @param {object} rect2
- * @return {bool}
+ * @param {Rectangle} rect1
+ * @param {Rectangle} rect2
+ * @return {boolean}
  *
  * @example:
  *   { top: 0, left: 0, width: 10, height: 10 },
@@ -133,9 +158,9 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
  *     y: 5
  *  }
  *
- * @param {object} circle
- * @param {object} point
- * @return {bool}
+ * @param {Circle} circle
+ * @param {Point} point
+ * @return {boolean}
  *
  * @example:
  *   { center: { x:0, y:0 }, radius:10 },  { x:0, y:0 }     => true
@@ -150,7 +175,7 @@ function isInsideCircle(/* circle, point */) {
  * Returns the first non repeated char in the specified strings otherwise returns null.
  *
  * @param {string} str
- * @return {string}
+ * @return {string | null}
  *
  * @example:
  *   'The quick brown fox jumps over the lazy dog' => 'T'
@@ -170,8 +195,8 @@ function findFirstSingleChar(/* str */) {
  *
  * @param {number} a
  * @param {number} b
- * @param {bool} isStartIncluded
- * @param {bool} isEndIncluded
+ * @param {boolean} isStartIncluded
+ * @param {boolean} isEndIncluded
  * @return {string}
  *
  * @example
@@ -313,7 +338,7 @@ function toNaryString(/* num, n */) {
 /**
  * Returns the common directory path for specified array of full filenames.
  *
- * @param {array} pathes
+ * @param {Array<string>} pathes
  * @return {string}
  *
  * @example:
@@ -330,9 +355,9 @@ function getCommonDirectoryPath(/* pathes */) {
  * Returns the product of two specified matrixes.
  * See details: https://en.wikipedia.org/wiki/Matrix_multiplication
  *
- * @param {array} m1
- * @param {array} m2
- * @return {array}
+ * @param {Array<Array<number>>} m1
+ * @param {Array<Array<number>>} m2
+ * @return {Array<Array<number>>}
  *
  * @example:
  *   [[ 1, 0, 0 ],       [[ 1, 2, 3 ],           [[ 1, 2, 3 ],
@@ -356,8 +381,8 @@ function getMatrixProduct(/* m1, m2 */) {
  * Function should return who is winner in the current position according to the game rules.
  * The result can be: 'X','0',undefined
  *
- * @param {array} position
- * @return {string}
+ * @param {Array<Array<'X' | '0' | undefined>>} position
+ * @return {'X' | '0' | undefined}
  *
  * @example
  *

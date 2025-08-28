@@ -100,7 +100,7 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  * Returns a string that repeated the specified number of times.
  *
  * @param {string} value
- * @param {string} count
+ * @param {number} count
  * @return {string}
  *
  * @example
@@ -160,7 +160,7 @@ function convertToUpperCase(/* str */) {
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
  * @param {string} str
- * @return {array}
+ * @return {Array<string>}
  *
  * @example
  *   'angus.young@gmail.com;brian.johnson@hotmail.com;bon.scott@yahoo.com'
@@ -224,7 +224,7 @@ function encodeToRot13(/* str */) {
 
 /**
  * Returns true if the value is string; otherwise false.
- * @param {string} value
+ * @param {any} value
  * @return {boolean}
  *
  * @example

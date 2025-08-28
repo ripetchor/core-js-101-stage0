@@ -7,10 +7,21 @@
  *                                                                                            *
  ******************************************************************************************** */
 
+// ********************************************************************************************
+// Type definition for sortCitiesArray and group functions
+
+/**
+ * @typedef {Object} GeoEntity
+ * @property {string} country
+ * @property {string} city
+ */
+
+// ********************************************************************************************
+
 /**
  * Returns an index of the specified element in array or -1 if element is not found
  *
- * @param {array} arr
+ * @param {Array<any>} arr
  * @param {any} value
  * @return {number}
  *
@@ -27,7 +38,7 @@ function findElement(/* arr, value */) {
  * Generates an array of odd numbers of the specified length
  *
  * @param {number} len
- * @return {array}
+ * @return {Array<number>}
  *
  * @example
  *    1 => [ 1 ]
@@ -42,8 +53,8 @@ function generateOdds(/* len */) {
  * Returns the doubled array - elements of the specified array
  * are repeated twice using original order
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<any>} arr
+ * @return {Array<any>}
  *
  * @example
  *    ['Ace', 10, true]  => ['Ace', 10, true,   'Ace', 10, true]
@@ -57,8 +68,8 @@ function doubleArray(/* arr */) {
 /**
  * Returns an array of positive numbers from the specified array in original order
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<number>} arr
+ * @return {Array<number>}
  *
  * @example
  *    [ 0, 1, 2, 3, 4, 5 ] => [ 1, 2, 3, 4, 5 ]
@@ -72,8 +83,8 @@ function getArrayOfPositives(/* arr */) {
 /**
  * Returns the array with strings only in the specified array (in original order)
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<any>} arr
+ * @return {Array<string>}
  *
  * @example
  *    [ 0, 1, 'cat', 3, true, 'dog' ] => [ 'cat', 'dog' ]
@@ -89,8 +100,8 @@ function getArrayOfStrings(/* arr */) {
  * Falsy values: false, null, 0, "", undefined, and NaN.
  * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean#Description)
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<any>} arr
+ * @return {Array<any>}
  *
  * @example
  *    [ 0, false, 'cat', NaN, true, '' ] => [ 'cat', true ]
@@ -104,8 +115,8 @@ function removeFalsyValues(/* arr */) {
 /**
  * Returns the array of uppercase strings from the specified array
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<string>} arr
+ * @return {Array<string>}
  *
  * @example
  *    [ 'permanent-internship', 'glutinous-shriek', 'multiplicative-elevation' ]
@@ -119,8 +130,8 @@ function getUpperCaseStrings(/* arr */) {
 /**
  * Returns the array of string lengths from the specified string array.
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<string>} arr
+ * @return {Array<number>}
  *
  * @example
  *    [ '', 'a', 'bc', 'def', 'ghij' ]  => [ 0, 1, 2, 3, 4 ]
@@ -133,9 +144,10 @@ function getStringsLength(/* arr */) {
 /**
  * Inserts the item into specified array at specified index
  *
- * @param {array} arr
+ * @param {Array<any>} arr
  * @param {any} item
  * @param {number} index
+ * @return {Array<any>}
  *
  * @example
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
@@ -148,8 +160,9 @@ function insertItem(/* arr, item, index */) {
 /**
  * Returns the n first items of the specified array
  *
- * @param {array} arr
+ * @param {Array<any>} arr
  * @param {number} n
+ * @return {Array<any>}
  *
  * @example
  *    [ 1, 3, 4, 5 ], 2 => [ 1, 3 ]
@@ -162,8 +175,9 @@ function getHead(/* arr, n */) {
 /**
  * Returns the n last items of the specified array
  *
- * @param {array} arr
+ * @param {Array<any>} arr
  * @param {number} n
+ * @return {Array<any>}
  *
  * @example
  *    [ 1, 3, 4, 5 ], 2  => [ 4, 5 ]
@@ -177,7 +191,7 @@ function getTail(/* arr, n */) {
  * Returns CSV representation of two-dimensional numeric array.
  * https://en.wikipedia.org/wiki/Comma-separated_values
  *
- * @param {array} arr
+ * @param {Array<Array<number>>} arr
  * @return {string}
  *
  * @example
@@ -201,8 +215,8 @@ function toCsvText(/* arr */) {
  * Transforms the numeric array into the according array of squares:
  *   f(x) = x * x
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<number>} arr
+ * @return {Array<number>}
  *
  * @example
  *   [ 0, 1, 2, 3, 4, 5 ] => [ 0, 1, 4, 9, 16, 25 ]
@@ -217,8 +231,8 @@ function toArrayOfSquares(/* arr */) {
  *     f[n] = x[0] + x[1] + x[2] +...+ x[n]
  *  or f[n] = f[n-1] + x[n]
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<number>} arr
+ * @return {Array<number>}
  *
  * Example :
  *   [ 1, 1, 1, 1, 1 ]        => [ 1, 2, 3, 4, 5 ]
@@ -233,8 +247,8 @@ function getMovingSum(/* arr */) {
 /**
  * Returns every second item from the specified array:
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<any>} arr
+ * @return {Array<any>}
  *
  * Example :
  * [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 2, 4, 6, 8, 10 ]
@@ -249,8 +263,8 @@ function getSecondItems(/* arr */) {
  * Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, three third items etc.
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<any>} arr
+ * @return {Array<any>}
  *
  * @example :
  *  [] => []
@@ -266,8 +280,8 @@ function propagateItemsByPositionIndex(/* arr */) {
 /**
  * Returns the 3 largest numbers from the specified array
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<number>} arr
+ * @return {Array<number>}
  *
  * @example
  *   [] => []
@@ -283,7 +297,7 @@ function get3TopItems(/* arr */) {
 /**
  * Returns the number of positive numbers from specified array
  *
- * @param {array} arr
+ * @param {Array<any>} arr
  * @return {number}
  *
  * @example
@@ -300,8 +314,8 @@ function getPositivesCount(/* arr */) {
 /**
  * Sorts digit names
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<string>} arr
+ * @return {Array<string>}
  *
  * @example
  *   [] => []
@@ -317,7 +331,7 @@ function sortDigitNamesByNumericOrder(/* arr */) {
 /**
  * Returns the sum of all items in the specified array of numbers
  *
- * @param {array} arr
+ * @param {Array<number>} arr
  * @return {number}
  *
  * @example
@@ -333,7 +347,7 @@ function getItemsSum(/* arr */) {
 /**
  * Returns the number of all falsy value in the specified array
  *
- * @param {array} arr
+ * @param {Array<any>} arr
  * @return {number}
  *
  * @example
@@ -349,7 +363,7 @@ function getFalsyValuesCount(/* arr */) {
 /**
  * Returns a number of all occurrences of the specified item in an array
  *
- * @param {array} arr
+ * @param {Array<any>} arr
  * @param {any} item
  * @return {number}
  *
@@ -367,7 +381,7 @@ function findAllOccurrences(/* arr, item */) {
 /**
  * Concatenates all elements from specified array into single string with ',' delimiter
  *
- * @param {array} arr
+ * @param {Array<any>} arr
  * @return {string}
  *
  * @example
@@ -383,8 +397,8 @@ function toStringList(/* arr */) {
  * Sorts the specified array by country name first and city name
  * (if countries are equal) in ascending order.
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<GeoEntity>} arr
+ * @return {Array<GeoEntity>}
  *
  * @example
  *    [
@@ -413,7 +427,7 @@ function sortCitiesArray(/* arr */) {
  * Creates an identity matrix of the specified size
  *
  * @param {number} n
- * @return {array}
+ * @return {Array<Array<number>>}
  *
  * @example
  *     1  => [[1]]
@@ -436,7 +450,7 @@ function getIdentityMatrix(/* n */) {
  *
  * @param {number} start
  * @param {number} end
- * @return {array}
+ * @return {Array<number>}
  *
  * @example
  *     1, 5  => [ 1, 2, 3, 4, 5 ]
@@ -451,8 +465,8 @@ function getIntervalArray(/* start, end */) {
 /**
  * Returns array containing only unique values from the specified array.
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<any>} arr
+ * @return {Array<any>}
  *
  * @example
  *   [ 1, 2, 3, 3, 2, 1 ] => [ 1, 2, 3 ]
@@ -469,10 +483,10 @@ function distinct(/* arr */) {
  * and values extracted via valueSelector callback.
  * See: https://en.wikipedia.org/wiki/Multimap
  *
- * @param {array} array
- * @param {Function} keySelector
- * @param {Function} valueSelector
- * @return {Map}
+ * @param {Array<GeoEntity>} array
+ * @param {(item: GeoEntity) => string} keySelector
+ * @param {(item: GeoEntity) => string} valueSelector
+ * @return {Map<string, Array<string>>}
  *
  * @example
  *   group([
@@ -501,10 +515,10 @@ function group(/* array, keySelector, valueSelector */) {
  * Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
  *
- * @param {array} arr
+ * @param {Array<any> | Array<Array<any>>} arr
  * @param {Function} childrenSelector, a transform function to apply to each element
  *                                     that returns an array of children
- * @return {array}
+ * @return {Array<any>}
  *
  * @example
  *   [[1, 2], [3, 4], [5, 6]], (x) => x     =>   [ 1, 2, 3, 4, 5, 6 ]
@@ -517,8 +531,8 @@ function selectMany(/* arr, childrenSelector */) {
 /**
  * Returns an element from the multidimensional array by the specified indexes.
  *
- * @param {array} arr
- * @param {array} indexes
+ * @param {Array<any> | Array<Array<any>>} arr
+ * @param {Array<number>} indexes
  * @return {any} element from array
  *
  * @example
@@ -536,8 +550,8 @@ function getElementByIndexes(/* arr, indexes */) {
  * The middle element (if exists) leave on the same position.
  *
  *
- * @param {array} arr
- * @return {array}
+ * @param {Array<any>} arr
+ * @return {Array<any>}
  *
  * @example
  *   [ 1, 2, 3, 4, 5 ]   =>  [ 4, 5, 3, 1, 2 ]
